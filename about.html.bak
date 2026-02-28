@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O hře — UNDER FINED</title>
+  <meta name="description" content="Prozkoumej herní mechaniky, vlastnosti a galerii screenshotů UNDER FINED.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════ -->
+<nav class="nav" id="navbar">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-icon">
+        <svg viewBox="0 0 16 16" fill="none">
+          <rect x="4" y="2" width="8" height="2" fill="#0a0a1a"/>
+          <rect x="2" y="4" width="2" height="2" fill="#0a0a1a"/>
+          <rect x="12" y="4" width="2" height="2" fill="#0a0a1a"/>
+          <rect x="4" y="6" width="8" height="2" fill="#0a0a1a"/>
+          <rect x="6" y="8" width="4" height="2" fill="#0a0a1a"/>
+          <rect x="6" y="10" width="2" height="2" fill="#0a0a1a" opacity=".5"/>
+          <rect x="8" y="12" width="2" height="2" fill="#0a0a1a" opacity=".3"/>
+        </svg>
+      </span>
+      <span class="nav__logo-text">UNDER FINED</span>
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="index.html" class="nav__link">Domů</a></li>
+      <li><a href="about.html" class="nav__link">O hře</a></li>
+      <li><a href="team.html" class="nav__link">Tým</a></li>
+    </ul>
+    <a href="https://itch.io" target="_blank" rel="noopener" class="nav__cta">HRÁT ZDARMA</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HEADER
+     ═══════════════════════════════════════════════════════════ -->
+<header class="page-header">
+  <div class="container">
+    <span class="badge badge--blue">INDIE GAME</span>
+    <h1>O hře</h1>
+    <p>Všechno, co potřebuješ vědět o UNDER FINED — mechaniky, vlastnosti a galerie.</p>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONCEPT
+     ═══════════════════════════════════════════════════════════ -->
+<section class="concept section-spacer">
+  <div class="container">
+    <div class="concept__layout">
+      <div class="concept__text reveal">
+        <span class="badge" style="margin-bottom: 1.2rem;">KONCEPT</span>
+        <h2>Pixel-art potápění<br>s roguelite prvky</h2>
+        <p>
+          UNDER FINED je <span class="hl">2D pixel-artový roguelite</span>, kde
+          hráč sestupuje do hlubokého oceánu. Ponoříš se, sbíráš
+          vzácné předměty, vyhýbáš se mořským příšerám — a pak musíš
+          stihnout vyplout zpět na hladinu.
+        </p>
+        <p>
+          Každý ponor trvá <span class="hl">přesně 10 minut</span>. Vrátíš-li
+          se na hladinu, prodáš nalezené poklady v Baka Shopu
+          a koupíš lepší ploutve, kyslíkovou bombu, baterku, brnění nebo zbraně.
+        </p>
+        <p>
+          Jádro hry: <span class="hl">riziko vs. odměna</span>. Jít hlouběji
+          znamená vzácnější loot, ale taky silnější monstra a méně
+          kyslíku na cestu zpět.
+        </p>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="window-chrome">
+          <div class="window-chrome__bar">
+            <span class="window-chrome__dot window-chrome__dot--red"></span>
+            <span class="window-chrome__dot window-chrome__dot--yellow"></span>
+            <span class="window-chrome__dot window-chrome__dot--green"></span>
+          </div>
+          <div class="window-chrome__body" style="min-height: 300px;">
+            <svg width="56" height="56" viewBox="0 0 16 16" fill="none" opacity=".12">
+              <rect x="6" y="1" width="4" height="2" fill="#4dc9f6"/>
+              <rect x="4" y="3" width="2" height="2" fill="#4dc9f6"/>
+              <rect x="10" y="3" width="2" height="2" fill="#4dc9f6"/>
+              <rect x="4" y="5" width="8" height="2" fill="#4dc9f6"/>
+              <rect x="6" y="7" width="4" height="2" fill="#4dc9f6"/>
+              <rect x="7" y="9" width="2" height="4" fill="#4dc9f6"/>
+            </svg>
+            <p style="margin-top: 1rem;">GAME CONCEPT ART</p>
+            <p style="font-size: 0.65rem; opacity: 0.4;">placeholder</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     GAME LOOP
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section-spacer" id="loop" style="background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container text-center">
+    <div class="section-header centered reveal">
+      <span class="badge badge--blue">HERNÍ SMYČKA</span>
+      <h2>Cyklus sestupu</h2>
+      <p>Každý pokus sleduje stejnou smyčku — ale žádné dva ponory nejsou stejné.</p>
+    </div>
+
+    <div class="loop reveal reveal-d2">
+      <div class="loop__step">
+        <div class="loop__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="6" y="1" width="4" height="2" fill="#4dc9f6"/><rect x="4" y="3" width="2" height="2" fill="#4dc9f6"/><rect x="10" y="3" width="2" height="2" fill="#4dc9f6"/><rect x="4" y="5" width="8" height="2" fill="#4dc9f6"/><rect x="6" y="7" width="4" height="2" fill="#4dc9f6"/><rect x="7" y="9" width="2" height="3" fill="#4dc9f6" opacity=".4"/></svg>
+        </div>
+        <span class="loop__label">PONOŘ</span>
+      </div>
+      <span class="loop__arrow">›</span>
+      <div class="loop__step">
+        <div class="loop__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="7" y="1" width="2" height="2" fill="#ffc940"/><rect x="5" y="3" width="2" height="2" fill="#ffc940"/><rect x="9" y="3" width="2" height="2" fill="#ffc940"/><rect x="3" y="5" width="2" height="2" fill="#ffc940"/><rect x="11" y="5" width="2" height="2" fill="#ffc940"/><rect x="5" y="7" width="2" height="2" fill="#ffc940"/><rect x="9" y="7" width="2" height="2" fill="#ffc940"/><rect x="7" y="9" width="2" height="2" fill="#ffc940"/></svg>
+        </div>
+        <span class="loop__label">SBÍREJ</span>
+      </div>
+      <span class="loop__arrow">›</span>
+      <div class="loop__step">
+        <div class="loop__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="6" y="2" width="4" height="2" fill="#4dc9f6"/><rect x="4" y="4" width="2" height="4" fill="#4dc9f6"/><rect x="10" y="4" width="2" height="4" fill="#4dc9f6"/><rect x="6" y="8" width="4" height="2" fill="#4dc9f6"/><rect x="7" y="10" width="2" height="3" fill="#4dc9f6" opacity=".4"/></svg>
+        </div>
+        <span class="loop__label">BRAŇ SE</span>
+      </div>
+      <span class="loop__arrow">›</span>
+      <div class="loop__step">
+        <div class="loop__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="7" y="2" width="2" height="2" fill="#4dc9f6"/><rect x="5" y="4" width="6" height="2" fill="#4dc9f6"/><rect x="7" y="6" width="2" height="2" fill="#4dc9f6"/><rect x="6" y="9" width="2" height="2" fill="#4dc9f6" opacity=".5"/><rect x="9" y="11" width="2" height="2" fill="#4dc9f6" opacity=".3"/></svg>
+        </div>
+        <span class="loop__label">NÁVRAT</span>
+      </div>
+      <span class="loop__arrow">›</span>
+      <div class="loop__step">
+        <div class="loop__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="5" y="2" width="6" height="2" fill="#ffc940"/><rect x="3" y="4" width="2" height="2" fill="#ffc940"/><rect x="11" y="4" width="2" height="2" fill="#ffc940"/><rect x="3" y="6" width="10" height="2" fill="#ffc940"/><rect x="5" y="8" width="6" height="2" fill="#ffc940"/><rect x="6" y="10" width="4" height="2" fill="#ffc940"/></svg>
+        </div>
+        <span class="loop__label">PRODEJ</span>
+      </div>
+      <span class="loop__arrow">›</span>
+      <div class="loop__step">
+        <div class="loop__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="5" y="1" width="2" height="2" fill="#4dc9f6"/><rect x="7" y="3" width="2" height="2" fill="#4dc9f6"/><rect x="9" y="5" width="2" height="6" fill="#4dc9f6"/><rect x="7" y="11" width="2" height="2" fill="#4dc9f6"/><rect x="3" y="11" width="4" height="2" fill="#4dc9f6"/><rect x="3" y="9" width="2" height="2" fill="#4dc9f6"/></svg>
+        </div>
+        <span class="loop__label">VYLEPŠI</span>
+      </div>
+      <span class="loop__arrow">›</span>
+      <div class="loop__step">
+        <div class="loop__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="7" y="1" width="2" height="2" fill="#4dc9f6"/><rect x="7" y="4" width="2" height="2" fill="#4dc9f6"/><rect x="5" y="6" width="6" height="2" fill="#4dc9f6"/><rect x="7" y="8" width="2" height="2" fill="#4dc9f6"/><rect x="7" y="11" width="2" height="2" fill="#4dc9f6"/><rect x="7" y="14" width="2" height="2" fill="#4dc9f6" opacity=".4"/></svg>
+        </div>
+        <span class="loop__label">HLOUBĚJI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURES GRID
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section-spacer" id="features">
+  <div class="container text-center">
+    <div class="section-header centered reveal">
+      <span class="badge">VLASTNOSTI</span>
+      <h2>Co tě čeká</h2>
+      <p>Klíčové mechaniky a prvky, které dělají UNDER FINED unikátním.</p>
+    </div>
+
+    <div class="features-grid reveal reveal-d1" style="text-align: left;">
+      <div class="feat-card">
+        <div class="feat-card__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="6" y="0" width="4" height="2" fill="#ffc940"/><rect x="4" y="2" width="2" height="2" fill="#ffc940"/><rect x="10" y="2" width="2" height="2" fill="#ffc940"/><rect x="6" y="4" width="4" height="2" fill="#ffc940"/><rect x="4" y="8" width="2" height="2" fill="#ffc940"/><rect x="10" y="8" width="2" height="2" fill="#ffc940"/><rect x="6" y="10" width="4" height="2" fill="#ffc940"/><rect x="6" y="14" width="4" height="2" fill="#ffc940"/></svg>
+        </div>
+        <h3>10min pokusy</h3>
+        <p>Rychlé, intenzivní potápěčské běhy. Přesně 10 minut na pokus — žádné čekání.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="3" y="3" width="4" height="4" fill="#ffc940"/><rect x="9" y="3" width="4" height="4" fill="#ffc940"/><rect x="3" y="9" width="4" height="4" fill="#ffc940"/><rect x="9" y="9" width="4" height="4" fill="#ffc940"/><rect x="4" y="4" width="2" height="2" fill="#0a0a1a"/><rect x="10" y="4" width="2" height="2" fill="#0a0a1a"/><rect x="4" y="10" width="2" height="2" fill="#0a0a1a"/><rect x="10" y="10" width="2" height="2" fill="#0a0a1a"/></svg>
+        </div>
+        <h3>Procedurální mapy</h3>
+        <p>Generovaný oceán — nikdy stejný layout. Biomy se mění s hloubkou.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="5" y="1" width="2" height="2" fill="#ffc940"/><rect x="7" y="3" width="2" height="2" fill="#ffc940"/><rect x="9" y="5" width="2" height="6" fill="#ffc940"/><rect x="7" y="11" width="2" height="2" fill="#ffc940"/><rect x="3" y="11" width="4" height="2" fill="#ffc940"/><rect x="3" y="9" width="2" height="2" fill="#ffc940"/></svg>
+        </div>
+        <h3>Systém vylepšení</h3>
+        <p>15+ kusů vybavení — ploutve, kyslíková bomba, baterka, brnění a další.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="2" height="6" fill="#ffc940"/><rect x="12" y="4" width="2" height="6" fill="#ffc940"/><rect x="4" y="6" width="2" height="4" fill="#ffc940"/><rect x="10" y="6" width="2" height="4" fill="#ffc940"/><rect x="6" y="5" width="4" height="2" fill="#ffc940"/><rect x="6" y="9" width="4" height="2" fill="#ffc940"/></svg>
+        </div>
+        <h3>Mořské příšery</h3>
+        <p>Smečkový AI. Reagují na baterku, blokují cestu zpět na hladinu.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="7" y="0" width="2" height="2" fill="#ffc940"/><rect x="5" y="2" width="2" height="2" fill="#ffc940"/><rect x="9" y="2" width="2" height="2" fill="#ffc940"/><rect x="3" y="4" width="2" height="2" fill="#ffc940"/><rect x="11" y="4" width="2" height="2" fill="#ffc940"/><rect x="5" y="6" width="2" height="2" fill="#ffc940"/><rect x="9" y="6" width="2" height="2" fill="#ffc940"/><rect x="7" y="8" width="2" height="2" fill="#ffc940"/></svg>
+        </div>
+        <h3>Riziko vs. odměna</h3>
+        <p>Hlubší vody = vzácnější loot, ale taky víc nebezpečí a míň kyslíku.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card__icon">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="4" y="3" width="8" height="2" fill="#ffc940"/><rect x="2" y="5" width="2" height="6" fill="#ffc940"/><rect x="12" y="5" width="2" height="6" fill="#ffc940"/><rect x="4" y="11" width="8" height="2" fill="#ffc940"/><rect x="6" y="7" width="2" height="2" fill="#ffc940"/><rect x="9" y="7" width="2" height="2" fill="#ffc940"/></svg>
+        </div>
+        <h3>Pixel art svět</h3>
+        <p>Ručně kreslený pixel art styl — pečlivě animované prostředí a postavy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     GALLERY
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section-spacer" id="gallery" style="background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container text-center">
+    <div class="section-header centered reveal">
+      <span class="badge badge--blue">GALERIE</span>
+      <h2>Screenshoty</h2>
+      <p>Snímky z vývoje — nahraďte za skutečné screenshoty, jakmile budou ready.</p>
+    </div>
+
+    <div class="gallery-grid reveal reveal-d1">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="visual-placeholder gallery-item__ph">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="0" y="8" width="16" height="2" fill="#4dc9f6" opacity=".3"/><rect x="2" y="6" width="4" height="2" fill="#4dc9f6" opacity=".4"/><rect x="10" y="7" width="3" height="2" fill="#4dc9f6" opacity=".4"/></svg>
+          <span>MĚLKÉ VODY</span>
+        </div>
+        <div class="gallery-item__overlay"><span>ZOBRAZIT</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="visual-placeholder gallery-item__ph">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="4" y="4" width="2" height="6" fill="#4dc9f6" opacity=".4"/><rect x="6" y="6" width="2" height="4" fill="#4dc9f6" opacity=".3"/><rect x="10" y="3" width="2" height="8" fill="#4dc9f6" opacity=".4"/><rect x="8" y="5" width="2" height="6" fill="#4dc9f6" opacity=".3"/></svg>
+          <span>KORÁLOVÝ ÚTES</span>
+        </div>
+        <div class="gallery-item__overlay"><span>ZOBRAZIT</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="visual-placeholder gallery-item__ph">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="6" width="4" height="6" fill="#4dc9f6" opacity=".3"/><rect x="2" y="4" width="4" height="2" fill="#4dc9f6" opacity=".4"/><rect x="8" y="8" width="6" height="4" fill="#4dc9f6" opacity=".3"/><rect x="10" y="6" width="2" height="2" fill="#4dc9f6" opacity=".4"/></svg>
+          <span>POTOPENÉ RUINY</span>
+        </div>
+        <div class="gallery-item__overlay"><span>ZOBRAZIT</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="visual-placeholder gallery-item__ph">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="6" y="2" width="4" height="2" fill="#4dc9f6" opacity=".4"/><rect x="4" y="4" width="2" height="4" fill="#4dc9f6" opacity=".3"/><rect x="10" y="4" width="2" height="4" fill="#4dc9f6" opacity=".3"/><rect x="2" y="8" width="4" height="2" fill="#4dc9f6" opacity=".3"/><rect x="10" y="8" width="4" height="2" fill="#4dc9f6" opacity=".3"/></svg>
+          <span>BOSS</span>
+        </div>
+        <div class="gallery-item__overlay"><span>ZOBRAZIT</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="visual-placeholder gallery-item__ph">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="4" y="4" width="8" height="2" fill="#ffc940" opacity=".3"/><rect x="4" y="6" width="8" height="4" fill="#ffc940" opacity=".2"/><rect x="6" y="10" width="4" height="2" fill="#ffc940" opacity=".3"/></svg>
+          <span>BAKA SHOP</span>
+        </div>
+        <div class="gallery-item__overlay"><span>ZOBRAZIT</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="visual-placeholder gallery-item__ph">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="7" y="3" width="2" height="2" fill="#4dc9f6" opacity=".2"/><rect x="7" y="7" width="2" height="2" fill="#4dc9f6" opacity=".15"/><rect x="4" y="10" width="2" height="2" fill="#4dc9f6" opacity=".1"/><rect x="10" y="5" width="2" height="2" fill="#4dc9f6" opacity=".1"/></svg>
+          <span>PROPAST</span>
+        </div>
+        <div class="gallery-item__overlay"><span>ZOBRAZIT</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox__inner" id="lightboxContent"></div>
+  <button class="lightbox__close" onclick="closeLightbox(event)">ESC</button>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA BANNER
+     ═══════════════════════════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner__inner reveal">
+      <span class="badge" style="margin-bottom: 1.4rem;">VYZKOUŠEJ ZDARMA</span>
+      <h2>Připraven na ponor?</h2>
+      <p>Zahraj si UNDER FINED na itch.io — 10 minut, jeden pokus.</p>
+      <a href="https://itch.io" target="_blank" rel="noopener" class="btn btn--primary">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <rect x="5" y="3" width="2" height="10" fill="currentColor"/>
+          <rect x="7" y="5" width="2" height="6" fill="currentColor"/>
+          <rect x="9" y="7" width="2" height="2" fill="currentColor"/>
+        </svg>
+        HRÁT NA ITCH.IO
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__pixel-strip"></div>
+  <div class="footer__top">
+    <div class="footer__brand">
+      <div class="footer__brand-logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 16 16" fill="none">
+            <rect x="4" y="2" width="8" height="2" fill="#0a0a1a"/>
+            <rect x="2" y="4" width="2" height="2" fill="#0a0a1a"/>
+            <rect x="12" y="4" width="2" height="2" fill="#0a0a1a"/>
+            <rect x="4" y="6" width="8" height="2" fill="#0a0a1a"/>
+            <rect x="6" y="8" width="4" height="2" fill="#0a0a1a"/>
+          </svg>
+        </span>
+        <span class="logo-text">UNDER FINED</span>
+      </div>
+      <p>Pixel-artový potápěčský roguelite od týmu Undefined. Vyrobeno s láskou.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Stránky</h4>
+      <a href="index.html">Domů</a>
+      <a href="about.html">O hře</a>
+      <a href="team.html">Tým</a>
+    </div>
+    <div class="footer__col">
+      <h4>Hra</h4>
+      <a href="about.html#features">Vlastnosti</a>
+      <a href="about.html#loop">Herní smyčka</a>
+      <a href="about.html#gallery">Galerie</a>
+    </div>
+    <div class="footer__col">
+      <h4>Komunita</h4>
+      <a href="https://itch.io" target="_blank">itch.io</a>
+      <a href="#">Discord</a>
+      <a href="#">Twitter / X</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">
+      &copy; 2026 Tým Undefined
+      <span class="footer__tag">GAME JAM 2026</span>
+    </span>
+    <div class="footer__socials">
+      <a href="https://itch.io" target="_blank" rel="noopener" class="footer__social" title="itch.io">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="2" fill="currentColor"/><rect x="2" y="4" width="2" height="8" fill="currentColor"/><rect x="12" y="4" width="2" height="8" fill="currentColor"/><rect x="2" y="12" width="12" height="2" fill="currentColor"/><rect x="6" y="6" width="4" height="4" fill="currentColor"/></svg>
+      </a>
+      <a href="#" class="footer__social" title="Discord">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="2" fill="currentColor"/><rect x="2" y="5" width="2" height="6" fill="currentColor"/><rect x="12" y="5" width="2" height="6" fill="currentColor"/><rect x="4" y="11" width="8" height="2" fill="currentColor"/><rect x="4" y="6" width="3" height="3" fill="currentColor"/><rect x="9" y="6" width="3" height="3" fill="currentColor"/></svg>
+      </a>
+      <a href="#" class="footer__social" title="Twitter / X">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="2" height="2" fill="currentColor"/><rect x="13" y="1" width="2" height="2" fill="currentColor"/><rect x="3" y="3" width="2" height="2" fill="currentColor"/><rect x="11" y="3" width="2" height="2" fill="currentColor"/><rect x="5" y="5" width="2" height="2" fill="currentColor"/><rect x="9" y="5" width="2" height="2" fill="currentColor"/><rect x="7" y="7" width="2" height="2" fill="currentColor"/><rect x="5" y="9" width="2" height="2" fill="currentColor"/><rect x="9" y="9" width="2" height="2" fill="currentColor"/><rect x="3" y="11" width="2" height="2" fill="currentColor"/><rect x="11" y="11" width="2" height="2" fill="currentColor"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

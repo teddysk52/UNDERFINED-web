@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tým — UNDER FINED</title>
+  <meta name="description" content="Poznej tým Undefined — čtyři vývojáři stojící za hrou UNDER FINED.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════ -->
+<nav class="nav" id="navbar">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-icon">
+        <svg viewBox="0 0 16 16" fill="none">
+          <rect x="4" y="2" width="8" height="2" fill="#0a0a1a"/>
+          <rect x="2" y="4" width="2" height="2" fill="#0a0a1a"/>
+          <rect x="12" y="4" width="2" height="2" fill="#0a0a1a"/>
+          <rect x="4" y="6" width="8" height="2" fill="#0a0a1a"/>
+          <rect x="6" y="8" width="4" height="2" fill="#0a0a1a"/>
+          <rect x="6" y="10" width="2" height="2" fill="#0a0a1a" opacity=".5"/>
+          <rect x="8" y="12" width="2" height="2" fill="#0a0a1a" opacity=".3"/>
+        </svg>
+      </span>
+      <span class="nav__logo-text">UNDER FINED</span>
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="index.html" class="nav__link">Domů</a></li>
+      <li><a href="about.html" class="nav__link">O hře</a></li>
+      <li><a href="team.html" class="nav__link">Tým</a></li>
+    </ul>
+    <a href="https://itch.io" target="_blank" rel="noopener" class="nav__cta">HRÁT ZDARMA</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HEADER
+     ═══════════════════════════════════════════════════════════ -->
+<header class="page-header">
+  <div class="container">
+    <span class="badge">TÝM UNDEFINED</span>
+    <h1>Kdo za tím stojí</h1>
+    <p>Čtyři vývojáři, čtyři země, jedna hra.</p>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TEAM SECTION
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section-spacer" id="team">
+  <div class="container text-center">
+    <div class="section-header centered reveal">
+      <span class="badge badge--blue">VÝVOJÁŘI</span>
+      <h2>Náš tým</h2>
+      <p>Mezinárodní indie team, který tvoří UNDER FINED s vášní pro pixel art a hry.</p>
+    </div>
+
+    <div class="team-grid reveal reveal-d1">
+
+      <!-- ── Ivan ── -->
+      <div class="team-card">
+        <div class="team-card__photo">
+          <div class="team-card__placeholder">
+            <svg viewBox="0 0 16 16" fill="none">
+              <rect x="5" y="1" width="6" height="3" fill="#4dc9f6" opacity=".25"/>
+              <rect x="4" y="4" width="8" height="5" fill="#4dc9f6" opacity=".18"/>
+              <rect x="3" y="9" width="10" height="4" fill="#4dc9f6" opacity=".12"/>
+              <rect x="6" y="4" width="2" height="2" fill="#4dc9f6" opacity=".35"/>
+              <rect x="9" y="4" width="2" height="2" fill="#4dc9f6" opacity=".35"/>
+            </svg>
+            <span>photo</span>
+          </div>
+          <div class="team-card__flag">
+            <svg viewBox="0 0 32 32"><rect width="32" height="16" fill="#005BBB"/><rect y="16" width="32" height="16" fill="#FFD500"/></svg>
+          </div>
+        </div>
+        <p class="team-card__name">IVAN ALIPOV</p>
+        <p class="team-card__role">PM & Frontend Dev</p>
+      </div>
+
+      <!-- ── Kamil ── -->
+      <div class="team-card">
+        <div class="team-card__photo">
+          <div class="team-card__placeholder">
+            <svg viewBox="0 0 16 16" fill="none">
+              <rect x="5" y="1" width="6" height="3" fill="#4dc9f6" opacity=".25"/>
+              <rect x="4" y="4" width="8" height="5" fill="#4dc9f6" opacity=".18"/>
+              <rect x="3" y="9" width="10" height="4" fill="#4dc9f6" opacity=".12"/>
+              <rect x="6" y="4" width="2" height="2" fill="#4dc9f6" opacity=".35"/>
+              <rect x="9" y="4" width="2" height="2" fill="#4dc9f6" opacity=".35"/>
+            </svg>
+            <span>photo</span>
+          </div>
+          <div class="team-card__flag">
+            <svg viewBox="0 0 32 32"><rect width="32" height="16" fill="#fff"/><rect y="16" width="32" height="16" fill="#DC143C"/></svg>
+          </div>
+        </div>
+        <p class="team-card__name">KAMIL JANIAK</p>
+        <p class="team-card__role">Programmer</p>
+      </div>
+
+      <!-- ── Arsen ── -->
+      <div class="team-card">
+        <div class="team-card__photo">
+          <div class="team-card__placeholder">
+            <svg viewBox="0 0 16 16" fill="none">
+              <rect x="5" y="1" width="6" height="3" fill="#4dc9f6" opacity=".25"/>
+              <rect x="4" y="4" width="8" height="5" fill="#4dc9f6" opacity=".18"/>
+              <rect x="3" y="9" width="10" height="4" fill="#4dc9f6" opacity=".12"/>
+              <rect x="6" y="4" width="2" height="2" fill="#4dc9f6" opacity=".35"/>
+              <rect x="9" y="4" width="2" height="2" fill="#4dc9f6" opacity=".35"/>
+            </svg>
+            <span>photo</span>
+          </div>
+          <div class="team-card__flag">
+            <svg viewBox="0 0 32 32"><rect width="32" height="10.67" fill="#D90012"/><rect y="10.67" width="32" height="10.67" fill="#0033A0"/><rect y="21.33" width="32" height="10.67" fill="#F2A800"/></svg>
+          </div>
+        </div>
+        <p class="team-card__name">ARSEN TADEVOSIAN</p>
+        <p class="team-card__role">Programmer & Game Designer</p>
+      </div>
+
+      <!-- ── Filip ── -->
+      <div class="team-card">
+        <div class="team-card__photo">
+          <div class="team-card__placeholder">
+            <svg viewBox="0 0 16 16" fill="none">
+              <rect x="5" y="1" width="6" height="3" fill="#4dc9f6" opacity=".25"/>
+              <rect x="4" y="4" width="8" height="5" fill="#4dc9f6" opacity=".18"/>
+              <rect x="3" y="9" width="10" height="4" fill="#4dc9f6" opacity=".12"/>
+              <rect x="6" y="4" width="2" height="2" fill="#4dc9f6" opacity=".35"/>
+              <rect x="9" y="4" width="2" height="2" fill="#4dc9f6" opacity=".35"/>
+            </svg>
+            <span>photo</span>
+          </div>
+          <div class="team-card__flag">
+            <svg viewBox="0 0 32 32"><rect width="32" height="16" fill="#fff"/><rect y="16" width="32" height="16" fill="#D7141A"/><polygon points="0,0 16,16 0,32" fill="#11457E"/></svg>
+          </div>
+        </div>
+        <p class="team-card__name">FILIP FIALA</p>
+        <p class="team-card__role">Programmer & Game Designer</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT THE TEAM
+     ═══════════════════════════════════════════════════════════ -->
+<section class="concept section-spacer--sm" style="background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="concept__layout">
+      <div class="concept__text reveal">
+        <span class="badge" style="margin-bottom: 1.2rem;">O NÁS</span>
+        <h2>Tým Undefined</h2>
+        <p>
+          Jsme mezinárodní indie tým čtyř vývojářů. Spojuje nás
+          láska k pixel artu, roguelite hrám a oceánu. Na UNDER FINED
+          pracujeme společně během Game Jamu 2026.
+        </p>
+        <p>
+          Každý člen přináší <span class="hl">unikátní dovednosti</span> —
+          od project managementu a frontend developmentu přes
+          programování herních mechanik až po game design.
+        </p>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="window-chrome">
+          <div class="window-chrome__bar">
+            <span class="window-chrome__dot window-chrome__dot--red"></span>
+            <span class="window-chrome__dot window-chrome__dot--yellow"></span>
+            <span class="window-chrome__dot window-chrome__dot--green"></span>
+          </div>
+          <div class="window-chrome__body" style="min-height: 240px;">
+            <svg width="56" height="56" viewBox="0 0 16 16" fill="none" opacity=".12">
+              <rect x="3" y="1" width="4" height="2" fill="#ffc940"/>
+              <rect x="2" y="3" width="6" height="4" fill="#ffc940"/>
+              <rect x="3" y="7" width="4" height="2" fill="#ffc940" opacity=".5"/>
+              <rect x="9" y="1" width="4" height="2" fill="#4dc9f6"/>
+              <rect x="8" y="3" width="6" height="4" fill="#4dc9f6"/>
+              <rect x="9" y="7" width="4" height="2" fill="#4dc9f6" opacity=".5"/>
+              <rect x="0" y="10" width="4" height="2" fill="#66d97f"/>
+              <rect x="0" y="12" width="3" height="2" fill="#66d97f" opacity=".5"/>
+              <rect x="6" y="10" width="4" height="2" fill="#a78bfa"/>
+              <rect x="6" y="12" width="3" height="2" fill="#a78bfa" opacity=".5"/>
+              <rect x="12" y="10" width="4" height="2" fill="#f472b6"/>
+              <rect x="12" y="12" width="3" height="2" fill="#f472b6" opacity=".5"/>
+            </svg>
+            <p style="margin-top: 1rem;">TEAM PHOTO</p>
+            <p style="font-size: 0.65rem; opacity: 0.4;">placeholder</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     DEVLOG
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section-spacer" id="devlog">
+  <div class="container text-center">
+    <div class="section-header centered reveal">
+      <span class="badge badge--blue">NOVINKY</span>
+      <h2>Devlog</h2>
+      <p>Nejnovější zprávy z vývoje UNDER FINED.</p>
+    </div>
+
+    <div class="devlog-grid reveal reveal-d1" style="text-align: left;">
+      <div class="devlog-card">
+        <p class="devlog-card__date">26. úno 2026</p>
+        <h3>Aktualizace Propast</h3>
+        <p>Nový nejhlubší biom — bioluminiscenční prostředí, mechaniky tlaku a nové příšery střežící dna oceánu.</p>
+        <a href="#" class="devlog-card__link">Číst dále <span>→</span></a>
+      </div>
+      <div class="devlog-card">
+        <p class="devlog-card__date">18. úno 2026</p>
+        <h3>AI příšer v2</h3>
+        <p>Přepracovaný systém chování — smečkový lov, reakce na baterku a blokování cesty zpět na hladinu.</p>
+        <a href="#" class="devlog-card__link">Číst dále <span>→</span></a>
+      </div>
+      <div class="devlog-card">
+        <p class="devlog-card__date">10. úno 2026</p>
+        <h3>Systém výbavy</h3>
+        <p>15+ kusů vybavení přidáno — ploutve, trupy, kyslíkové zásobníky, baterky a zbraně pro hlubší ponory.</p>
+        <a href="#" class="devlog-card__link">Číst dále <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA BANNER
+     ═══════════════════════════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner__inner reveal">
+      <span class="badge" style="margin-bottom: 1.4rem;">PŘIPOJ SE</span>
+      <h2>Chceš vědět víc?</h2>
+      <p>Sleduj vývoj UNDER FINED na itch.io nebo se připoj na Discord.</p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="https://itch.io" target="_blank" rel="noopener" class="btn btn--primary">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <rect x="5" y="3" width="2" height="10" fill="currentColor"/>
+            <rect x="7" y="5" width="2" height="6" fill="currentColor"/>
+            <rect x="9" y="7" width="2" height="2" fill="currentColor"/>
+          </svg>
+          ITCH.IO
+        </a>
+        <a href="#" class="btn btn--secondary">
+          Discord →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__pixel-strip"></div>
+  <div class="footer__top">
+    <div class="footer__brand">
+      <div class="footer__brand-logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 16 16" fill="none">
+            <rect x="4" y="2" width="8" height="2" fill="#0a0a1a"/>
+            <rect x="2" y="4" width="2" height="2" fill="#0a0a1a"/>
+            <rect x="12" y="4" width="2" height="2" fill="#0a0a1a"/>
+            <rect x="4" y="6" width="8" height="2" fill="#0a0a1a"/>
+            <rect x="6" y="8" width="4" height="2" fill="#0a0a1a"/>
+          </svg>
+        </span>
+        <span class="logo-text">UNDER FINED</span>
+      </div>
+      <p>Pixel-artový potápěčský roguelite od týmu Undefined. Vyrobeno s láskou.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Stránky</h4>
+      <a href="index.html">Domů</a>
+      <a href="about.html">O hře</a>
+      <a href="team.html">Tým</a>
+    </div>
+    <div class="footer__col">
+      <h4>Hra</h4>
+      <a href="about.html#features">Vlastnosti</a>
+      <a href="about.html#loop">Herní smyčka</a>
+      <a href="about.html#gallery">Galerie</a>
+    </div>
+    <div class="footer__col">
+      <h4>Komunita</h4>
+      <a href="https://itch.io" target="_blank">itch.io</a>
+      <a href="#">Discord</a>
+      <a href="#">Twitter / X</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">
+      &copy; 2026 Tým Undefined
+      <span class="footer__tag">GAME JAM 2026</span>
+    </span>
+    <div class="footer__socials">
+      <a href="https://itch.io" target="_blank" rel="noopener" class="footer__social" title="itch.io">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="2" fill="currentColor"/><rect x="2" y="4" width="2" height="8" fill="currentColor"/><rect x="12" y="4" width="2" height="8" fill="currentColor"/><rect x="2" y="12" width="12" height="2" fill="currentColor"/><rect x="6" y="6" width="4" height="4" fill="currentColor"/></svg>
+      </a>
+      <a href="#" class="footer__social" title="Discord">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="2" fill="currentColor"/><rect x="2" y="5" width="2" height="6" fill="currentColor"/><rect x="12" y="5" width="2" height="6" fill="currentColor"/><rect x="4" y="11" width="8" height="2" fill="currentColor"/><rect x="4" y="6" width="3" height="3" fill="currentColor"/><rect x="9" y="6" width="3" height="3" fill="currentColor"/></svg>
+      </a>
+      <a href="#" class="footer__social" title="Twitter / X">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="2" height="2" fill="currentColor"/><rect x="13" y="1" width="2" height="2" fill="currentColor"/><rect x="3" y="3" width="2" height="2" fill="currentColor"/><rect x="11" y="3" width="2" height="2" fill="currentColor"/><rect x="5" y="5" width="2" height="2" fill="currentColor"/><rect x="9" y="5" width="2" height="2" fill="currentColor"/><rect x="7" y="7" width="2" height="2" fill="currentColor"/><rect x="5" y="9" width="2" height="2" fill="currentColor"/><rect x="9" y="9" width="2" height="2" fill="currentColor"/><rect x="3" y="11" width="2" height="2" fill="currentColor"/><rect x="11" y="11" width="2" height="2" fill="currentColor"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
