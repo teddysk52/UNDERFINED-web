@@ -35,7 +35,7 @@
       <li><a href="team.html" class="nav__link">Tým</a></li>
     </ul>
 
-    <a href="https://itch.io" target="_blank" rel="noopener" class="nav__cta">HRÁT ZDARMA</a>
+    <a href="https://jadiefication.itch.io/underfined" target="_blank" rel="noopener" class="nav__cta">HRÁT ZDARMA</a>
 
     <button class="nav__toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -63,7 +63,7 @@
     </p>
 
     <div class="hero__actions">
-      <a href="https://itch.io" target="_blank" rel="noopener" class="btn btn--primary">
+      <a href="https://jadiefication.itch.io/underfined" target="_blank" rel="noopener" class="btn btn--primary">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
           <rect x="5" y="3" width="2" height="10" fill="currentColor"/>
           <rect x="7" y="5" width="2" height="6" fill="currentColor"/>
@@ -353,7 +353,7 @@
       <span class="badge" style="margin-bottom: 1.4rem;">VYZKOUŠEJ ZDARMA</span>
       <h2>Připraven na ponor?</h2>
       <p>Zahraj si UNDER FINED na itch.io — 10 minut, jeden pokus, kolik toho zvládneš?</p>
-      <a href="https://itch.io" target="_blank" rel="noopener" class="btn btn--primary">
+      <a href="https://jadiefication.itch.io/underfined" target="_blank" rel="noopener" class="btn btn--primary">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
           <rect x="5" y="3" width="2" height="10" fill="currentColor"/>
           <rect x="7" y="5" width="2" height="6" fill="currentColor"/>
@@ -401,7 +401,7 @@
     </div>
     <div class="footer__col">
       <h4>Komunita</h4>
-      <a href="https://itch.io" target="_blank">itch.io</a>
+      <a href="https://jadiefication.itch.io/underfined" target="_blank">itch.io</a>
       <a href="#">Discord</a>
       <a href="#">Twitter / X</a>
     </div>
@@ -412,7 +412,7 @@
       <span class="footer__tag">GAME JAM 2026</span>
     </span>
     <div class="footer__socials">
-      <a href="https://itch.io" target="_blank" rel="noopener" class="footer__social" title="itch.io">
+      <a href="https://jadiefication.itch.io/underfined" target="_blank" rel="noopener" class="footer__social" title="itch.io">
         <svg viewBox="0 0 16 16" fill="none">
           <rect x="2" y="2" width="12" height="2" fill="currentColor"/>
           <rect x="2" y="4" width="2" height="8" fill="currentColor"/>
