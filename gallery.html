@@ -6,6 +6,7 @@
   <title>Galerie — UNDER FINED</title>
   <meta name="description" content="Screenshoty a vizuály z UNDER FINED.">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="photos/logo.png">
 </head>
 <body>
 
@@ -44,88 +45,36 @@
 <section class="gallery-section">
   <div class="container">
 
-    <!-- Filters -->
-    <div class="gallery-filters reveal">
-      <button class="filter-btn active" data-filter="all">Vše</button>
-      <button class="filter-btn" data-filter="biome">Biomy</button>
-      <button class="filter-btn" data-filter="shop">Obchod</button>
-      <button class="filter-btn" data-filter="monster">Příšery</button>
-      <button class="filter-btn" data-filter="ui">UI</button>
-    </div>
-
     <!-- Grid -->
     <div class="gallery-grid reveal reveal-d1">
 
-      <div class="gallery-item" data-category="biome" onclick="openLightbox(this)">
-        <div class="gallery-item__ph">
-          <!-- Replace with <img src="screenshots/shallow.png" alt="Melke vody"> -->
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Mělké vody</span>
-        </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="web-photos/main.png" alt="Hlavní záběr">
         <div class="gallery-item__overlay"><span>Zobrazit</span></div>
       </div>
 
-      <div class="gallery-item" data-category="biome" onclick="openLightbox(this)">
-        <div class="gallery-item__ph">
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Korálový útes</span>
-        </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="web-photos/underwater.png" alt="Pod vodou">
         <div class="gallery-item__overlay"><span>Zobrazit</span></div>
       </div>
 
-      <div class="gallery-item" data-category="biome" onclick="openLightbox(this)">
-        <div class="gallery-item__ph">
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Potopené ruiny</span>
-        </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="web-photos/chest.png" alt="Truhla">
         <div class="gallery-item__overlay"><span>Zobrazit</span></div>
       </div>
 
-      <div class="gallery-item" data-category="monster" onclick="openLightbox(this)">
-        <div class="gallery-item__ph">
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Boss</span>
-        </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="web-photos/meduza.png" alt="Medúza">
         <div class="gallery-item__overlay"><span>Zobrazit</span></div>
       </div>
 
-      <div class="gallery-item" data-category="shop" onclick="openLightbox(this)">
-        <div class="gallery-item__ph">
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Baka Shop</span>
-        </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="web-photos/nether.png" alt="Nether">
         <div class="gallery-item__overlay"><span>Zobrazit</span></div>
       </div>
 
-      <div class="gallery-item" data-category="biome" onclick="openLightbox(this)">
-        <div class="gallery-item__ph">
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Propast</span>
-        </div>
-        <div class="gallery-item__overlay"><span>Zobrazit</span></div>
-      </div>
-
-      <div class="gallery-item" data-category="monster" onclick="openLightbox(this)">
-        <div class="gallery-item__ph">
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Anglerfish</span>
-        </div>
-        <div class="gallery-item__overlay"><span>Zobrazit</span></div>
-      </div>
-
-      <div class="gallery-item" data-category="ui" onclick="openLightbox(this)">
-        <div class="gallery-item__ph">
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Inventář</span>
-        </div>
-        <div class="gallery-item__overlay"><span>Zobrazit</span></div>
-      </div>
-
-      <div class="gallery-item" data-category="ui" onclick="openLightbox(this)">
-        <div class="gallery-item__ph">
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>HUD</span>
-        </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="web-photos/nether-chest.png" alt="Nether truhla">
         <div class="gallery-item__overlay"><span>Zobrazit</span></div>
       </div>
 

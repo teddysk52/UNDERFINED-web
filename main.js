@@ -186,8 +186,10 @@
 
   window.openLightbox = function (el) {
     if (!lb || !lbInner) return;
-    var ph = el.querySelector('.gallery-item__ph');
-    if (ph) lbInner.innerHTML = ph.outerHTML;
+    var img = el.querySelector('img');
+    if (img) {
+      lbInner.innerHTML = '<img src="' + img.src + '" alt="' + (img.alt || '') + '" style="max-width:90vw;max-height:85vh;border-radius:var(--radius);object-fit:contain;">';
+    }
     lb.classList.add('active');
     document.body.style.overflow = 'hidden';
   };
