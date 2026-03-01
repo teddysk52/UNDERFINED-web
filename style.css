@@ -153,13 +153,12 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .nav__logo-icon {
   width: 36px; height: 36px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--cyan), var(--teal));
+  overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   transition: transform 0.3s var(--ease-out);
-  box-shadow: 0 0 20px var(--cyan-glow);
 }
 .nav__logo:hover .nav__logo-icon { transform: rotate(-6deg) scale(1.05); }
-.nav__logo-icon svg { width: 20px; height: 20px; }
+.nav__logo-icon img { width: 100%; height: 100%; object-fit: contain; }
 
 .nav__logo-text {
   font-family: var(--font-head);
@@ -1674,10 +1673,10 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .footer__brand-logo .logo-icon {
   width: 32px; height: 32px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--cyan), var(--teal));
+  overflow: hidden;
   display: flex; align-items: center; justify-content: center;
 }
-.footer__brand-logo .logo-icon svg { width: 18px; height: 18px; }
+.footer__brand-logo .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
 .footer__brand-logo .logo-text {
   font-family: var(--font-head);
   font-size: 1rem;
