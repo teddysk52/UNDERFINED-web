@@ -34,6 +34,28 @@
     }
   });
 
+  /* ── HERO PARALLAX LAYERS (mouse + touch) ────────────────── */
+  var heroEl = document.getElementById('hero');
+  var heroLayers = heroEl ? heroEl.querySelectorAll('.hero__layer') : [];
+
+  function onHeroMove(clientX, clientY) {
+    if (!heroEl) return;
+    var r = heroEl.getBoundingClientRect();
+    var x = (clientX - (r.left + r.width / 2)) / r.width;
+    var y = (clientY - (r.top  + r.height / 2)) / r.height;
+    heroEl.style.setProperty('--mx', (x * 60).toFixed(2) + 'px');
+    heroEl.style.setProperty('--my', (y * 60).toFixed(2) + 'px');
+  }
+
+  window.addEventListener('mousemove', function (e) {
+    onHeroMove(e.clientX, e.clientY);
+  }, { passive: true });
+
+  window.addEventListener('touchmove', function (e) {
+    if (!e.touches || !e.touches.length) return;
+    onHeroMove(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+
   /* ── SCROLL HANDLER ─────────────────────────────────────── */
   var ticking = false;
   function onScroll() {
@@ -45,16 +67,29 @@
       /* nav background */
       if (nav) nav.classList.toggle('scrolled', sy > 40);
 
-      /* hero parallax */
+      /* hero content parallax */
       var heroContent = document.querySelector('.hero__content');
       if (heroContent) {
-        heroContent.style.transform = 'translateY(' + (sy * 0.1) + 'px)';
+        heroContent.style.transform = 'translateY(' + (sy * 0.15) + 'px)';
         heroContent.style.opacity = Math.max(0, 1 - sy / 500);
+      }
+
+      /* depth illusion — layers shift at different speeds on scroll */
+      if (heroEl && heroLayers.length) {
+        var r = heroEl.getBoundingClientRect();
+        var progress = Math.min(1, Math.max(0,
+          (window.innerHeight - r.top) / (window.innerHeight + r.height)));
+        heroLayers.forEach(function (layer, i) {
+          var k = (i + 1) * 6;
+          layer.style.transform =
+            'translate3d(calc(var(--mx,0px) * var(--px,0.02)), calc(var(--my,0px) * var(--py,0.02) + ' +
+            (progress * k).toFixed(2) + 'px), 0)';
+        });
       }
 
       /* reveal-on-scroll */
       document.querySelectorAll('.reveal:not(.visible)').forEach(function (el) {
-        if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.88) {
           el.classList.add('visible');
         }
       });
@@ -66,19 +101,25 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ── HERO BUBBLES ───────────────────────────────────────── */
+  /* ── HERO BUBBLES (upgraded — glass-like) ───────────────── */
   var heroBubbles = document.getElementById('heroBubbles');
   if (heroBubbles) {
-    for (var i = 0; i < 12; i++) {
-      var b = document.createElement('div');
+    var bubbleCount = 20;
+    for (var i = 0; i < bubbleCount; i++) {
+      var b = document.createElement('span');
       b.className = 'bubble';
-      var size = Math.random() * 5 + 2;
-      b.style.cssText =
-        'width:' + size + 'px;height:' + size + 'px;' +
-        'left:' + (Math.random() * 100) + '%;' +
-        'animation-duration:' + (Math.random() * 18 + 14) + 's;' +
-        'animation-delay:' + (Math.random() * 10) + 's;' +
-        '--drift:' + ((Math.random() - 0.5) * 50) + 'px;';
+      var size = 5 + Math.random() * 20;
+      var left = Math.random() * 100;
+      var dur = 8 + Math.random() * 12;
+      var opacity = 0.1 + Math.random() * 0.25;
+      var drift = (Math.random() * 2 - 1) * 40;
+
+      b.style.left = left + '%';
+      b.style.setProperty('--s', size.toFixed(1) + 'px');
+      b.style.setProperty('--d', dur.toFixed(1) + 's');
+      b.style.setProperty('--o', opacity.toFixed(2));
+      b.style.setProperty('--x', drift.toFixed(1) + 'px');
+      b.style.animationDelay = (-Math.random() * dur).toFixed(1) + 's';
       heroBubbles.appendChild(b);
     }
   }
@@ -86,16 +127,21 @@
   /* ── PAGE BUBBLES (ambient background) ──────────────────── */
   var pageBubbles = document.getElementById('pageBubbles');
   if (pageBubbles) {
-    for (var j = 0; j < 18; j++) {
-      var pb = document.createElement('div');
+    for (var j = 0; j < 14; j++) {
+      var pb = document.createElement('span');
       pb.className = 'bubble';
-      var sz = Math.random() * 3 + 1.5;
-      pb.style.cssText =
-        'width:' + sz + 'px;height:' + sz + 'px;' +
-        'left:' + (Math.random() * 100) + '%;' +
-        'animation-duration:' + (Math.random() * 25 + 20) + 's;' +
-        'animation-delay:' + (Math.random() * 15) + 's;' +
-        '--drift:' + ((Math.random() - 0.5) * 70) + 'px;';
+      var sz = 3 + Math.random() * 8;
+      var pLeft = Math.random() * 100;
+      var pDur = 14 + Math.random() * 16;
+      var pOp = 0.06 + Math.random() * 0.12;
+      var pDrift = (Math.random() * 2 - 1) * 50;
+
+      pb.style.left = pLeft + '%';
+      pb.style.setProperty('--s', sz.toFixed(1) + 'px');
+      pb.style.setProperty('--d', pDur.toFixed(1) + 's');
+      pb.style.setProperty('--o', pOp.toFixed(2));
+      pb.style.setProperty('--x', pDrift.toFixed(1) + 'px');
+      pb.style.animationDelay = (-Math.random() * pDur).toFixed(1) + 's';
       pageBubbles.appendChild(pb);
     }
   }
@@ -241,6 +287,24 @@
     }, { threshold: 0.5 });
     statNums.forEach(function (n) { cObs.observe(n); });
   }
+
+  /* ── CARD TILT ON HOVER ─────────────────────────────────── */
+  var tiltCards = document.querySelectorAll('.pill, .devlog-card, .mech-card');
+  tiltCards.forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = ((y - centerY) / centerY) * -3;
+      var rotateY = ((x - centerX) / centerX) * 3;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-6px)';
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.transform = '';
+    });
+  });
 
   /* ── GALLERY ITEM TRANSITIONS ───────────────────────────── */
   galleryItems.forEach(function (item) {
